@@ -1,0 +1,13 @@
+cargo init time_attendent_solana --lib
+cargo add solana-program
+
+cargo build-bpf
+
+# solana cli
+solana config set http--keypair /Users/oddworks/.config/solana/id.json 
+solana config set --url https://api.devnet.solana.com
+solana logs 
+solana balance
+solana airdrop 1
+cargo build-bpf
+
