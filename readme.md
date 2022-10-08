@@ -10,7 +10,18 @@
 
 
 # solana faucet
-https://solfaucet.com/
+[https://solfaucet.com/](https://solfaucet.com/)
 
-solana config set --url localhost
-solana config get
+
+# solana playground
+[https://beta.solpg.io/](https://beta.solpg.io/)
+
+
+# solana-cli
+solana config set http--keypair /Users/oddworks/.config/solana/id.json 
+solana config set --url https://api.devnet.solana.com
+solana logs 
+solana balance
+solana airdrop 1
+solana airdrop 5
+solana supply 

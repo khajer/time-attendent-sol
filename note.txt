@@ -1,0 +1,2 @@
+cargo init time_attendent_solana --lib
+cargo add solana-program
