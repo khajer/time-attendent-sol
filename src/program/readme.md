@@ -27,3 +27,7 @@ solana airdrop 1
 solana airdrop 5
 solana supply 
 ```
+
+# log 
+``` 
+    solana logs | grep {programId}
