@@ -19,7 +19,7 @@ import {
     'time_attendent_solana-keypair.json'
   );
   
-  
+
   async function main() {
     
     console.log("Launching client...");
@@ -50,7 +50,7 @@ import {
     /*
     Conduct a transaction with our program
     */
-    console.log('--Pinging Program ', programId.toBase58());
+    console.log('-- Pinging Program ', programId.toBase58());
     const instruction = new TransactionInstruction({
       keys: [{pubkey: triggerKeypair.publicKey, isSigner: false, isWritable: true}],
       programId,
