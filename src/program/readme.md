@@ -31,3 +31,4 @@ solana supply
 # log 
 ``` 
     solana logs | grep {programId}
+```
