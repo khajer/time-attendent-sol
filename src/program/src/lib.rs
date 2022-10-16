@@ -1,13 +1,18 @@
-
-
+use borsh::{BorshDeserialize, BorshSerialize};
 use solana_program::{
     account_info::{next_account_info, AccountInfo},
     entrypoint,
     entrypoint::ProgramResult,
     msg,
     program_error::ProgramError,
-    pubkey::Pubkey,
+    pubkey::Pubkey
 };
+
+#[derive(BorshSerialize, BorshDeserialize, Debug)]
+pub struct GreetingAccount {
+    /// number of greetings
+    pub counter: u32,
+}
 
 // Declare and export the program's entrypoint
 entrypoint!(process_instruction);
@@ -27,6 +32,12 @@ pub fn process_instruction(
         msg!("Account does not correct");
         return Err(ProgramError::IncorrectProgramId);
     }
+
+    let mut greeting_account = GreetingAccount::try_from_slice(&account.data.borrow())?;
+    greeting_account.counter += 1;
+    greeting_account.serialize(&mut &mut account.data.borrow_mut()[..])?;
+
+    msg!("Greeted {} time(s)!", greeting_account.counter);
 
     Ok(())
 }
